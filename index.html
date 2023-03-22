@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+	<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('1827a0520ec651c49679d64431a28aaf');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '「그린(Green)파트너」',
+        description: ' : 아름다운가게와 함께 세상의 변화에 기여하는 파트너사',
+        imageUrl:
+          'https://k.kakaocdn.net/14/dn/btr1bdYRAiw/yChP5dy4jxNoLfoKDR4qkK/o.jpg',
+        link: {
+          mobileWebUrl: 'https://www.beautifulstore.org',
+          webUrl: 'https://www.beautifulstore.org',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '기관소개서',
+          link: {
+            mobileWebUrl: 'https://youtu.be/BpAe8d-CXKk',
+            webUrl: 'https://youtu.be/BpAe8d-CXKk',
+          },
+        },
+        {
+          title: '참여제안서',
+          link: {
+            mobileWebUrl: 'https://youtu.be/BpAe8d-CXKk',
+            webUrl: 'https://youtu.be/BpAe8d-CXKk',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
